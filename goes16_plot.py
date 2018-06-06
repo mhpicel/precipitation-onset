@@ -57,9 +57,8 @@ def plot_GOES16_channel(date, idx, channel, region):
 
     for im in ax.images:
         im.remove()
-    im = ax.imshow(z, extent=(x.min(), x.max(), y.min(), y.max()), origin='upper')
+    im = ax.imshow(z, extent=(x.min(), x.max(), y.min(), y.max()), origin='upper', cmap='plasma')
     timestamp = datetime.strptime(ds.start_date_time, '%Y%j%H%M%S')
-    
     # Plot text
     #plt.title('GOES 16: '+ str(channel_title[int(channel)+1]), fontsize=20)
     plt.text(0.5,1.035, 'GOES 16: '+ str(channel_title[int(channel)-1]),
